@@ -51,9 +51,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
                         . Html::endForm()
                         . '</li>',
                 ['label' => 'Главная', 'url' => ['/site/index'], 'class' => 'nav-item'],
-                ['label' => 'О нас', 'url' => ['/site/about'], 'class' => 'nav-item'],
-                ['label' => 'Контакты', 'url' => ['/site/contact'], 'class' => 'nav-item'],
-                ['label' => 'Книги', 'url' => ['/knigi/index'], 'class' => 'nav-item'],
+                ['label' => 'Парфюмы', 'url' => ['/parfm/index'], 'class' => 'nav-item'],
             ]
         ]);
         NavBar::end();
@@ -62,7 +60,7 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
 </header>
 
 <div class="brand-container bg-secondary rounded-circle d-flex justify-content-center align-items-center" style="position: absolute; top: 0.5rem; left: 1rem; width: 10rem; height: 3rem;">
-    <span class="brand-text text-white">Библиотека</span>
+    <span class="brand-text text-white">Парфюмерная</span>
 </div>
 
 <main id="main" class="flex-shrink-0" role="main">

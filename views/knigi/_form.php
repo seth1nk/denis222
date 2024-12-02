@@ -16,13 +16,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'автор')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'колличество_страниц')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Количество_страниц')->textInput() ?>
 
-    <?= $form->field($model, 'год_выпуска')->textInput() ?>
+    <?= $form->field($model, 'Год_издания')->textInput() ?>
 
-    <?= $form->field($model, 'город_издания')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Город_издания')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'рейтинг')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Рейтинг')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

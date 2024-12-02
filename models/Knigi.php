@@ -7,13 +7,13 @@ use Yii;
 /**
  * This is the model class for table "knigi".
  *
- * @property int $код_книги
+ * @property int $id
  * @property string $название
  * @property string $автор
- * @property string $колличество_страниц
- * @property string $год_выпуска
- * @property string $город_издания
- * @property string $рейтинг
+ * @property int $Количество_страниц
+ * @property int $Год_издания
+ * @property string $Город_издания
+ * @property string $Рейтинг
  */
 class Knigi extends \yii\db\ActiveRecord
 {
@@ -31,12 +31,9 @@ class Knigi extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['название', 'автор', 'колличество_страниц', 'год_выпуска', 'город_издания', 'рейтинг'], 'required'],
-            [['год_выпуска'], 'safe'],
-            [['название', 'автор'], 'string', 'max' => 30],
-            [['колличество_страниц'], 'string', 'max' => 99],
-            [['город_издания'], 'string', 'max' => 20],
-            [['рейтинг'], 'string', 'max' => 10],
+            [['название', 'автор', 'Количество_страниц', 'Год_издания', 'Город_издания', 'Рейтинг'], 'required'],
+            [['Количество_страниц', 'Год_издания'], 'integer'],
+            [['название', 'автор', 'Город_издания', 'Рейтинг'], 'string', 'max' => 255],
         ];
     }
 
@@ -46,13 +43,13 @@ class Knigi extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            #'код_книги' => 'Код Книги',
+            'id' => 'ID',
             'название' => 'Название',
             'автор' => 'Автор',
-            'колличество_страниц' => 'Колличество Страниц',
-            'год_выпуска' => 'Год Выпуска',
-            'город_издания' => 'Город Издания',
-            'рейтинг' => 'Рейтинг',
+            'Количество_страниц' => 'Количество Страниц',
+            'Год_издания' => 'Год Издания',
+            'Город_издания' => 'Город Издания',
+            'Рейтинг' => 'Рейтинг',
         ];
     }
 }

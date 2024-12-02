@@ -2,16 +2,16 @@
 
 namespace app\controllers;
 
-use app\models\Knigi;
-use app\models\KnigiSearch;
+use app\models\Parfm;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * KnigiController implements the CRUD actions for Knigi model.
+ * ParfmController implements the CRUD actions for Parfm model.
  */
-class KnigiController extends Controller
+class ParfmController extends Controller
 {
     /**
      * @inheritDoc
@@ -32,23 +32,33 @@ class KnigiController extends Controller
     }
 
     /**
-     * Lists all Knigi models.
+     * Lists all Parfm models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new KnigiSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $dataProvider = new ActiveDataProvider([
+            'query' => Parfm::find(),
+            /*
+            'pagination' => [
+                'pageSize' => 50
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'id' => SORT_DESC,
+                ]
+            ],
+            */
+        ]);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
-     * Displays a single Knigi model.
+     * Displays a single Parfm model.
      * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
@@ -61,13 +71,13 @@ class KnigiController extends Controller
     }
 
     /**
-     * Creates a new Knigi model.
+     * Creates a new Parfm model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Knigi();
+        $model = new Parfm();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -83,7 +93,7 @@ class KnigiController extends Controller
     }
 
     /**
-     * Updates an existing Knigi model.
+     * Updates an existing Parfm model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return string|\yii\web\Response
@@ -103,7 +113,7 @@ class KnigiController extends Controller
     }
 
     /**
-     * Deletes an existing Knigi model.
+     * Deletes an existing Parfm model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return \yii\web\Response
@@ -117,15 +127,15 @@ class KnigiController extends Controller
     }
 
     /**
-     * Finds the Knigi model based on its primary key value.
+     * Finds the Parfm model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Knigi the loaded model
+     * @return Parfm the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Knigi::findOne(['id' => $id])) !== null) {
+        if (($model = Parfm::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\models\Knigi $model */
 
-$this->title = $model->код_книги;
-$this->params['breadcrumbs'][] = ['label' => 'Knigis', 'url' => ['index']];
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Книги', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,11 +16,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'код_книги' => $model->код_книги], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'код_книги' => $model->код_книги], [
+        <?= Html::a('Изменить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Вы уверены?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,13 +29,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'код_книги',
+            'id',
             'название',
             'автор',
-            'колличество_страниц',
-            'год_выпуска',
-            'город_издания',
-            'рейтинг',
+            'Количество_страниц',
+            'Год_издания',
+            'Город_издания',
+            'Рейтинг',
         ],
     ]) ?>
 
